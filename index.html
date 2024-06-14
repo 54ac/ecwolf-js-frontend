@@ -8,57 +8,62 @@
 	</head>
 	<body>
 		<div id="app">
-			<fieldset>
-				<legend>Game file source</legend>
+			<div id="setup">
+				<h2>ECWolf</h2>
 
-				<label for="fileDefault"
-					><input
-						type="radio"
-						id="fileDefault"
-						class="option"
-						name="source"
-						checked
-					/>Built-in (Shareware version)</label
-				>
+				<fieldset>
+					<legend>Game file source</legend>
 
-				<label for="fileURL"
-					><input type="radio" id="fileURL" class="option" name="source" />URL
-					to zip file:
-					<input type="text" id="fileURLInput" class="option" placeholder="URL"
-				/></label>
+					<label for="fileDefault"
+						><input
+							type="radio"
+							id="fileDefault"
+							class="option"
+							name="source"
+							checked
+						/>Built-in (Shareware version)</label
+					>
 
-				<label for="fileLocalFolder"
-					><input
-						type="radio"
-						id="fileLocalFolder"
-						class="option"
-						name="source" />Folder with game files:
-					<input type="file" id="fileLocalFolderInput" webkitdirectory
-				/></label>
+					<label for="fileURL"
+						><input type="radio" id="fileURL" class="option" name="source" />URL
+						to zip file:
+						<input
+							type="text"
+							id="fileURLInput"
+							class="option"
+							placeholder="URL"
+					/></label>
 
-				<label for="fileLocalZip"
-					><input
-						type="radio"
-						id="fileLocalZip"
-						class="option"
-						name="source" />Zip file:
-					<input type="file" id="fileLocalZipInput" accept=".zip"
-				/></label>
-			</fieldset>
+					<label for="fileLocalFolder"
+						><input
+							type="radio"
+							id="fileLocalFolder"
+							class="option"
+							name="source" />Folder with game files:
+						<input type="file" id="fileLocalFolderInput" webkitdirectory
+					/></label>
 
-			<label for="arguments"
-				>Command line arguments:
+					<label for="fileLocalZip"
+						><input
+							type="radio"
+							id="fileLocalZip"
+							class="option"
+							name="source" />Zip file:
+						<input type="file" id="fileLocalZipInput" accept=".zip"
+					/></label>
+				</fieldset>
+
 				<input
 					type="text"
 					id="argumentsInput"
-					placeholder="Arguments"
+					placeholder="Command line arguments"
 					class="option"
-			/></label>
+				/>
 
-			<button id="start">Start</button>
+				<button id="start">Start</button>
 
-			<p id="error"></p>
-
+				<p id="status"></p>
+			</div>
 			<canvas id="canvas"></canvas>
 		</div>
 

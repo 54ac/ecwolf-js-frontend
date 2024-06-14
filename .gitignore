@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 *.lnk
+
+ecwolf.js
+ecwolf.pk3
+ecwolf.wasm
