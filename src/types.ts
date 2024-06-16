@@ -13,3 +13,14 @@ export interface EmscriptenModuleExt extends EmscriptenModule {
 }
 
 export type GameFileList = { name: string; data: string }[];
+
+export interface Options {
+	fileDefault: boolean;
+	fileURL: boolean;
+	fileURLInput: string;
+	fileLocalFolder: boolean;
+	fileLocalFolderInput: string;
+	fileLocalZip: boolean;
+	fileLocalZipInput: string;
+	argumentsInput: string;
+}

@@ -1,4 +1,3 @@
-import "../node_modules/modern-normalize/modern-normalize.css";
 import "./style.css";
 
 import { fileLocalInputSetup } from "./components/fileInput";

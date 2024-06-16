@@ -7,65 +7,76 @@
 		<title>ECWolf front</title>
 	</head>
 	<body>
-		<div id="app">
-			<div id="setup">
-				<h2>ECWolf</h2>
+		<div id="setup">
+			<h2>ECWolf</h2>
 
-				<fieldset>
-					<legend>Game file source</legend>
+			<fieldset>
+				<legend>Game file source</legend>
 
-					<label for="fileDefault"
-						><input
-							type="radio"
-							id="fileDefault"
-							class="option"
-							name="source"
-							checked
-						/>Built-in (Shareware version)</label
-					>
+				<label for="fileDefault"
+					><input
+						type="radio"
+						id="fileDefault"
+						class="option"
+						name="source"
+						checked
+					/>Built-in (Shareware version)</label
+				>
 
-					<label for="fileURL"
-						><input type="radio" id="fileURL" class="option" name="source" />URL
-						to zip file:
-						<input
-							type="text"
-							id="fileURLInput"
-							class="option"
-							placeholder="URL"
-					/></label>
+				<label for="fileURL"
+					><input type="radio" id="fileURL" class="option" name="source" />URL
+					to zip file:
+					<input type="text" id="fileURLInput" class="option" placeholder="URL"
+				/></label>
 
-					<label for="fileLocalFolder"
-						><input
-							type="radio"
-							id="fileLocalFolder"
-							class="option"
-							name="source" />Folder with game files:
-						<input type="file" id="fileLocalFolderInput" webkitdirectory
-					/></label>
+				<label for="fileLocalFolder"
+					><input
+						type="radio"
+						id="fileLocalFolder"
+						class="option"
+						name="source" />Folder with game files:
+					<input type="file" id="fileLocalFolderInput" webkitdirectory
+				/></label>
 
-					<label for="fileLocalZip"
-						><input
-							type="radio"
-							id="fileLocalZip"
-							class="option"
-							name="source" />Zip file:
-						<input type="file" id="fileLocalZipInput" accept=".zip"
-					/></label>
-				</fieldset>
+				<label for="fileLocalZip"
+					><input
+						type="radio"
+						id="fileLocalZip"
+						class="option"
+						name="source" />Zip file:
+					<input type="file" id="fileLocalZipInput" accept=".zip"
+				/></label>
+			</fieldset>
+			<label for="argumentsInput">Command line arguments:</label>
+			<input type="text" id="argumentsInput" class="option" />
 
-				<input
-					type="text"
-					id="argumentsInput"
-					placeholder="Command line arguments"
-					class="option"
-				/>
+			<button id="start">Start</button>
 
-				<button id="start">Start</button>
+			<p id="status"></p>
 
-				<p id="status"></p>
-			</div>
-			<canvas id="canvas"></canvas>
+			<details>
+				<summary>Notes</summary>
+
+				<ul>
+					<li>
+						Uses <a href="https://github.com/54ac/ecwolf-js">ecwolf-js</a>.
+					</li>
+					<li>"Game files" here refers to IWADs, e.g. .wl6 or .sod files.</li>
+					<li>
+						ECWolf officially supports Wolfenstein 3D, Spear of Destiny, and
+						Super 3D Noah's Ark.
+					</li>
+					<li>
+						The recommended way of playing the game is in a fullscreen Chrome
+						window. This way the browser will not interrupt the game with its
+						hotkeys (e.g. Ctrl+W). Unfortunately, Firefox does not (yet) support
+						the Keyboard Lock API.
+					</li>
+				</ul>
+			</details>
 		</div>
+
+		<canvas id="canvas"></canvas>
 
 		<script type="module" src="/src/main.ts"></script>
 	</body>

@@ -1,13 +1,4 @@
-interface Options {
-	fileDefault: boolean;
-	fileURL: boolean;
-	fileURLInput: string;
-	fileLocalFolder: boolean;
-	fileLocalFolderInput: string;
-	fileLocalZip: boolean;
-	fileLocalZipInput: string;
-	argumentsInput: string;
-}
+import { Options } from "../types";
 
 const defaultOptions: Options = {
 	fileDefault: true,
