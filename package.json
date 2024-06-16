@@ -1,8 +1,14 @@
 {
-	"name": "test90-ecwolf-front",
-	"private": true,
-	"version": "0.0.0",
+	"name": "ecwolf-js-frontend",
+	"author": {
+		"name": "54ac",
+		"email": "me@54ac.ovh",
+		"url": "https://github.com/54ac"
+	},
+	"repository": "github:54ac/ecwolf-js-frontend",
+	"version": "1.0.0",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"start": "vite",
 		"build": "tsc && vite build",
