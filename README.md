@@ -2,7 +2,7 @@
 
 ### What is this?
 
-This is a simple, minimal frontend for [ECWolf-JS](https://github.com/54ac/ecwolf-js), a WebAssembly port of [ECWolf](https://maniacsvault.net/ecwolf/). Written in TypeScript. Launches game from remote or local files and supports command line arguments. Uses JSZip to unpack zip files in the browser. Game saves and config saved by the Emscripten runtime in the browser's IndexedDB.
+This is a simple, minimal frontend for [ECWolf-JS](https://github.com/54ac/ecwolf-js), a WebAssembly port of [ECWolf](https://maniacsvault.net/ecwolf/), used for launching games like Wolfenstein 3D in the browser. Written in TypeScript. Launches game from remote or local files and supports command line arguments. Uses JSZip to unpack zip files in the browser. Game saves and config saved by the Emscripten runtime in the browser's IndexedDB.
 
 ### How do I launch this?
 
