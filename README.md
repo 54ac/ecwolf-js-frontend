@@ -8,9 +8,9 @@ This is a simple, minimal frontend for [ECWolf-JS](https://github.com/54ac/ecwol
 
 Supply the following files:
 
-- ecwolf.pk3 from the latest release of ECWolf to /public/static
-- ecwolf.wasm and ecwolf.js from the latest release of ECWolf-JS to /public/static and /src/static respectively
-- shareware.zip containing the IWADs (.wl1 files) from the shareware version of Wolfenstein 3D to /public/static (optional)
+- ecwolf.pk3 from [the latest release of ECWolf](https://maniacsvault.net/ecwolf/download.php) to /public/static
+- ecwolf.wasm and ecwolf.js from [the latest release of ECWolf-JS](https://github.com/54ac/ecwolf-js/releases) to /public/static and /src/static respectively
+- shareware.zip containing the IWADs (.wl1 files) from [the shareware version of Wolfenstein 3D](https://archive.org/details/wolf3dsw) to /public/static (optional)
 
 Then, use npm to launch a web server using Vite:
 
