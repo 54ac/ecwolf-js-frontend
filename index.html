@@ -5,6 +5,8 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ECWolf-JS frontend</title>
+		<script defer type="module" src="/src/main.ts"></script>
+		<link rel="stylesheet" href="/src/style.css" />
 	</head>
 	<body>
 		<main id="setup">
@@ -20,12 +22,13 @@
 						class="option"
 						name="source"
 						checked
-					/>Built-in (Shareware version)</label
+					/><span>Built-in (Shareware version)</span></label
 				>
 
 				<label for="fileURL"
-					><input type="radio" id="fileURL" class="option" name="source" />URL
-					to zip file:
+					><input type="radio" id="fileURL" class="option" name="source" /><span
+						>URL to zip file:</span
+					>
 					<input type="text" id="fileURLInput" class="option" placeholder="URL"
 				/></label>
 
@@ -34,7 +37,7 @@
 						type="radio"
 						id="fileLocalFolder"
 						class="option"
-						name="source" />Folder with game files:
+						name="source" /><span>Folder with game files:</span>
 					<input type="file" id="fileLocalFolderInput" webkitdirectory
 				/></label>
 
@@ -43,14 +46,15 @@
 						type="radio"
 						id="fileLocalZip"
 						class="option"
-						name="source" />Zip file:
+						name="source" /><span>Zip file:</span>
 					<input type="file" id="fileLocalZipInput" accept=".zip"
 				/></label>
 			</fieldset>
+
 			<label for="argumentsInput">Command line arguments:</label>
 			<input type="text" id="argumentsInput" class="option" />
 
-			<button id="start">Start</button>
+			<button id="startButton">Start</button>
 
 			<p id="status"></p>
 
@@ -71,6 +75,17 @@
 						window. This way the browser will not interrupt the game with its
 						hotkeys (e.g. Ctrl+W). Unfortunately, Firefox does not (yet) support
 						the Keyboard Lock API.
+					</li>
+					<li>
+						Only keyboard controls are supported. Possibly mouse if you select
+						the windowed mouse option and restart the game.
+					</li>
+					<li>
+						Emscripten seems to get confused when launching straight into
+						fullscreen mode, so this option has been overriden in this demo.
+						Also, enabling fullscreen while the windowed mouse option is enabled
+						seems to crash the game. Or if you enable the fullscreen option
+						twice in a row by using the Ctrl key (but not with Enter).
 					</li>
 				</ul>
 			</details>
@@ -96,7 +111,5 @@
 		</main>
 
 		<canvas id="canvas"></canvas>
-
-		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>

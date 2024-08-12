@@ -1,18 +1,16 @@
-import "./style.css";
-
 import { fileLocalInputSetup } from "./components/fileInput";
 import optionsSetup from "./components/options";
 import { startGame } from "./components/gameModule";
 import { NavigatorExt } from "./types";
 
 export const startButton = document.getElementById(
-	"start"
+	"startButton"
 ) as HTMLButtonElement;
 startButton.addEventListener("click", () => startGame());
 
 export const statusP = document.getElementById(
 	"status"
-)! as HTMLParagraphElement;
+) as HTMLParagraphElement;
 
 const navigator = window.navigator as NavigatorExt;
 
