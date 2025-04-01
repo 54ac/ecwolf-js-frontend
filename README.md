@@ -6,7 +6,7 @@ This is a simple, minimal frontend for [ECWolf-JS](https://github.com/54ac/ecwol
 
 ### Where can I play this?
 
-**[Check out the demo.](https://54ac.ovh:5490/)**
+**[Check out the demo.](https://54ac.ovh/ecwolf)**
 
 ### How do I launch this myself?
 
