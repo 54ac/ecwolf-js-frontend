@@ -6,7 +6,7 @@
 		"url": "https://github.com/54ac"
 	},
 	"repository": "github:54ac/ecwolf-js-frontend",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -15,15 +15,17 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.1",
+		"@eslint/js": "^9.29.0",
 		"@types/emscripten": "^1.39.13",
-		"@typescript-eslint/eslint-plugin": "^8.28.0",
-		"@typescript-eslint/parser": "^8.28.0",
-		"eslint": "^8.57.1",
+		"eslint": "^9.29.0",
 		"eslint-config-prettier": "^10.1.1",
+		"globals": "^16.2.0",
 		"prettier": "^3.2.5",
 		"stylelint": "^16.7.0",
-		"stylelint-config-standard": "^37.0.0",
+		"stylelint-config-standard": "^38.0.0",
 		"typescript": "^5.2.2",
+		"typescript-eslint": "^8.34.1",
 		"vite": "^6.2.3"
 	},
 	"dependencies": {

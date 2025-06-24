@@ -3,8 +3,9 @@ import { startButton, statusP } from "../main";
 import errorHandler from "./errorHandler";
 import { EmscriptenModuleExt } from "../types";
 import { fileListSelect, fileRemoteInputSetup } from "./fileInput";
+import { NavigatorExt } from "../types";
 
-let gameModule: EmscriptenModuleExt;
+let gameModule: EmscriptenModuleExt | null = null;
 
 const argumentsInput = document.getElementById(
 	"argumentsInput"
@@ -19,8 +20,8 @@ const showGame = () => {
 const exitGameHandler = () => {
 	document.getElementById("setup")!.style.display = "flex";
 	document.getElementById("canvas")!.style.display = "none";
-	document.body.style.backgroundColor = "";
-	gameModule = null as unknown as EmscriptenModuleExt;
+	document.body.style.backgroundColor = "initial";
+	gameModule = null;
 };
 
 export const startGame = async () => {
@@ -34,18 +35,18 @@ export const startGame = async () => {
 		return;
 	});
 
-	gameModule = await createModule({
+	gameModule = (await createModule({
 		locateFile: () => "/static/ecwolf.wasm",
 		canvas: document.getElementById("canvas") as HTMLCanvasElement
 	}).catch((e) => {
 		errorHandler(e as string);
 		return;
-	});
+	})) as EmscriptenModuleExt;
 	const { FS } = gameModule;
 
 	fetch("/static/ecwolf.pk3", {
 		method: "HEAD"
-	}).catch((e) => {
+	}).catch((e: unknown) => {
 		errorHandler(e as string);
 		return;
 	});
@@ -100,6 +101,24 @@ export const startGame = async () => {
 
 	startButton.disabled = false;
 };
+
+const navigator = window.navigator as NavigatorExt;
+addEventListener("fullscreenchange", () => {
+	if (!gameModule) return;
+
+	gameModule.ccall(
+		"SetFullscreenEmscripten",
+		"void",
+		["bool"],
+		[!!document.fullscreenElement]
+	);
+
+	// Disable browser hotkeys in fullscreen mode - doesn't work in Firefox yet
+	if (navigator.keyboard) {
+		if (document.fullscreenElement) navigator.keyboard.lock();
+		else navigator.keyboard.unlock();
+	}
+});
 
 addEventListener("error", (e) => {
 	exitGameHandler();
